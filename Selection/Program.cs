@@ -12,21 +12,44 @@ namespace Selection
         {
             string pizza = Input("What Pizza?").ToLower();
 
+
             switch (pizza)
             {
                 case "cheese and tomato":
                 case "margherita":
-                    Console.WriteLine("Suitable for Vegetarians");
+                    Print("Suitable for Vegetarians", ConsoleColor.Green);
                     break;
                 case "meat feast":
                 case "pepperoni":
-                    Console.WriteLine("NOT Suitable for vegetarians");
+                    Print("NOT Suitable for vegetarians", ConsoleColor.Red);
                     break;
                 default:
-                    Console.WriteLine("UNKOWN PIZZA! MAY CONTAIN MEAT!");
+                    Print("UNKOWN PIZZA! MAY CONTAIN MEAT!");
                     break;
             }
+
+            Console.ReadLine();
         }
+        /// <summary>
+        /// Outputs text to console
+        /// </summary>
+        /// <param name="text">output text</param>
+        /// <param name="colour">text colour</param>
+        private static void Print(string text, ConsoleColor colour = ConsoleColor.White, bool NewLine = true)
+        {
+            Console.ForegroundColor = (colour);
+
+            if (NewLine)
+            {
+                Console.WriteLine(text);
+            }
+            else
+            {
+                Console.Write(text);
+            }
+            Console.ResetColor();
+        }
+            
 
         /// <summary>
         /// get input from console
@@ -40,5 +63,7 @@ namespace Selection
 
             return answer;
         }
+
+        
     }
 }
