@@ -28,6 +28,11 @@ namespace Selection
             }
         }
 
+        /// <summary>
+        /// get input from console
+        /// </summary>
+        /// <param name="question">the question to ask</param>
+        /// <returns>input from console</returns>
         private static string Input(string question)
         {
             Console.Write(question);
