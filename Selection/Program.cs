@@ -10,10 +10,7 @@ namespace Selection
     {
         static void Main(string[] args)
         {
-            string pizza = "";
-
-            Console.Write("What type of pizza do you like? : ");
-            pizza = Console.ReadLine().ToLower();
+            string pizza = Input("What Pizza?").ToLower();
 
             switch (pizza)
             {
@@ -29,6 +26,14 @@ namespace Selection
                     Console.WriteLine("UNKOWN PIZZA! MAY CONTAIN MEAT!");
                     break;
             }
+        }
+
+        private static string Input(string question)
+        {
+            Console.Write(question);
+            string answer = Console.ReadLine();
+
+            return answer;
         }
     }
 }
